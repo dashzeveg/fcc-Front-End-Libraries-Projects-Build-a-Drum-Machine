@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: Russo One;
+  text-align: center;
+  background: #8d8d8d;;
+}
+
+#drum-machine {
+  display: inline-block;
+  border: 5px solid orange;
+  background: #b3b3b3;
+  //width: 700px;
+  padding: 30px;
+  margin: 30px;
+}
+
+.logo {
+  color: #000;
+  float: right;
+  margin-top: -25px;
+  margin-right: -25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+%shared-box {
+  width: 100px;
+  height: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 80px;
+  background: grey;
+  border-radius: 5px;
+	
+	-webkit-box-shadow: 3px 3px 5px #000000;
+	-moz-box-shadow: 3px 3px 5px #000000;
+	box-shadow: 3px 3px 5px #000000;
+  
+  outline: none;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  
+  &:hover    {
+    //background: orange;
+    cursor: pointer;
+  }
+}
+
+.item1 {
+  grid-area: item1;
+  @extend %shared-box;
+}
+
+.item2 {
+  grid-area: item2;
+  @extend %shared-box;
+}
+
+.item3 {
+  grid-area: item3;
+  @extend %shared-box;
+}
+
+.item4 {
+  grid-area: item4;
+  @extend %shared-box;
+}
+
+.item5 {
+  grid-area: item5;
+  @extend %shared-box;
+}
+
+.item6 {
+  grid-area: item6;
+  @extend %shared-box;
+}
+
+.item7 {
+  grid-area: item7;
+  @extend %shared-box;
+}
+
+.item8 {
+  grid-area: item8;
+  @extend %shared-box;
+}
+
+.item9 {
+  grid-area: item9;
+  @extend %shared-box;
+}
+
+.pad-bank {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  grid-template-areas: 
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "item7 item8 item9";
+  justify-content: center;
+  align-content: center;
+  border: 0px solid red;
+  float: left;
+}
+
+.control {
+  display: inline-block;
+  min-width: 300px;
+  margin-left: 30px;
+  border: 0px solid red;
+}
+
+.switchButton {
+  
+}
+
+#display {
+  background: grey;
+  padding: 20px;
+  width: 70%;
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.author {
+  display: inline-block;
+  width: 100%;
+  padding: 30px;
+  font-family: Tahoma;
+  color: #000000;
+  
+  a {
+  text-decoration: none;
+  color: #00264d;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    
+  }
+  
+}
+
+@media screen and (max-width: 700px) {
+  .grid-container {
+    width: 100%;
+    float: none;
+  }
+  
+  .control {
+    width: 100%;
+    margin-left: 00px;
+    margin-top: 30px;
+  }
+}
+
+/* Switch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: grey;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Slider */
+.slider1 {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.slider1:hover {
+    opacity: 1;
+}
+
+.slider1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider1::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+}
